@@ -123,6 +123,9 @@ def main(_argv):
             cv2.imshow('frame', frame)
             if cv2.waitKey(1) == ord('q'):
                 exit()
+                
+            #return output with bboxes
+            return outputs
 
 
 if __name__ == '__main__':
