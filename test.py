@@ -136,7 +136,7 @@ def main(_argv):
     return outputs
 
 
-if name == '__main__':
+if __name__ == '__main__':
     try:
         app.run(main)
     except SystemExit:
