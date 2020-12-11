@@ -58,11 +58,11 @@ def main(input_image, _argv):
         exit()
 
     if not WEBCAM:
-        if not os.path.exists(IMG_PATH):
-            print(f"cannot find image path from {IMG_PATH}")
-            exit()
+#         if not os.path.exists(IMG_PATH):
+#             print(f"cannot find image path from {IMG_PATH}")
+#             exit()
 
-        print("[*] Processing on single image {}".format(IMG_PATH))
+#         print("[*] Processing on single image {}".format(IMG_PATH))
 
 #         img_raw = cv2.imread(IMG_PATH)
         img_raw = input_image
