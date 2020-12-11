@@ -21,7 +21,7 @@ flags.DEFINE_float('score_th', 0.5, 'score threshold for nms')
 flags.DEFINE_float('down_scale_factor', 1.0, 'down-scale factor for inputs')
 
 
-def main(_argv):
+def main(image_path, _argv):
     # init
 
     CONFIG_PATH = './configs/retinaface_mbv2.yaml'
@@ -29,7 +29,7 @@ def main(_argv):
     IOU_TH = 0.4
     SCORE_TH = 0.5
     WEBCAM = False
-    IMG_PATH = './data/0_Parade_marchingband_1_149.jpg'
+    IMG_PATH = image_path
     DOWN_FACTOR = 1.0
 
     os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
