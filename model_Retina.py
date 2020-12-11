@@ -29,7 +29,6 @@ def main(input_image, _argv):
     IOU_TH = 0.4
     SCORE_TH = 0.5
     WEBCAM = False
-#     IMG_PATH = image_path
     DOWN_FACTOR = 1.0
 
     os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
