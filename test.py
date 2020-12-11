@@ -21,7 +21,7 @@ flags.DEFINE_float('score_th', 0.5, 'score threshold for nms')
 flags.DEFINE_float('down_scale_factor', 1.0, 'down-scale factor for inputs')
 
 
-def main(image_path, _argv):
+def main(input_image, _argv):
     # init
 
     CONFIG_PATH = './configs/retinaface_mbv2.yaml'
@@ -65,7 +65,8 @@ def main(image_path, _argv):
 
         print("[*] Processing on single image {}".format(IMG_PATH))
 
-        img_raw = cv2.imread(IMG_PATH)
+#         img_raw = cv2.imread(IMG_PATH)
+        img_raw = input_image
         img_height_raw, img_width_raw, _ = img_raw.shape
         img = np.float32(img_raw.copy())
 
@@ -85,7 +86,7 @@ def main(image_path, _argv):
         outputs = recover_pad_output(outputs, pad_params)
 
         # draw and save results
-        save_img_path = os.path.join('out_' + os.path.basename(IMG_PATH))
+        save_img_path = "result.jpg"
         for prior_index in range(len(outputs)):
             draw_bbox_landm(img_raw, outputs[prior_index], img_height_raw,
                             img_width_raw)
