@@ -21,7 +21,7 @@ flags.DEFINE_float('score_th', 0.5, 'score threshold for nms')
 flags.DEFINE_float('down_scale_factor', 1.0, 'down-scale factor for inputs')
 
 
-def main(input_image, _argv):
+def main(_argv):
     # init
 
     CONFIG_PATH = './configs/retinaface_mbv2.yaml'
@@ -56,6 +56,8 @@ def main(input_image, _argv):
     else:
         print("[*] Cannot find ckpt from {}.".format(checkpoint_dir))
         exit()
+        
+    return model
 
     if not WEBCAM:
 #         if not os.path.exists(IMG_PATH):
